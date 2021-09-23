@@ -53,14 +53,26 @@
             //return false;
 
     //if this passes isAnagram is true
-    //return true;\
-
-
+    //return true;
+//------------------------------------------------------------------------------------
 package baseline;
+
+import java.util.Scanner;
 
 public class Solution24 {
     public static void main(String[] args) {
 
-    }
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Enter two strings and I'll tell you if they are anagrams: ");
+        System.out.print("Enter the first string: ");
+        String string1 = scanner.nextLine();
+        System.out.print("Enter the second string: ");
+        String string2 = scanner.nextLine();
+
+        if(Anagram.isAnagram(string1,string2))
+            System.out.printf("\"%s\" and \"%s\" are anagrams.", string1, string2);
+        else
+            System.out.printf("\"%s\" and \"%s\" are not anagrams.", string1, string2);
+    }
 }
