@@ -30,8 +30,7 @@ output to the user the strength of the password
         letters numbers and characters
         more than 8 characters
  */
-
-import baseline.Password;
+package baseline;
 
 public class Solution25 {
     public static void main(String[] args) {
