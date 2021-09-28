@@ -2,8 +2,8 @@ package baseline;
 import java.util.Scanner;
 
 public class Password {
-    private String usersPassword;
-    private int strength = 0;
+    protected String usersPassword;
+    private int strength;
 
     //generated getters and setters for Password class
     private void setStrength(int strength) {
@@ -16,28 +16,28 @@ public class Password {
         return usersPassword;
     }
 
-    public void retrievePassword(){
+    public void retrievePassword() {
         //prompts user for password and stores nextLine() as a new password
         //default password strength is 0 or "unknown strength"
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a password: ");
         setUsersPassword(scanner.nextLine());
-        setStrength(0);
     }
 
-    public void passwordValidator() {
+    public int passwordValidator(String usersPassword) {
         //code that determines password strength
         //and assigns number value 1-4 for
         //(very weak, weak, strong, very strong)
         //first check string length if under 8 chars it can only be weak or very weak
-        this.usersPassword = getUsersPassword();
-        int length = getUsersPassword().length();
+        setUsersPassword(usersPassword);
+        int length = usersPassword.length();
         if(length < 8){
             checkWeakStrength();
         }
         else{
             checkStrongStrength();
         }
+        return strength;
     }
 
     //if the password is less than 8 chars it can only be weak or very weak
@@ -148,7 +148,7 @@ public class Password {
     //method that takes strength and converts it to proper string form
     private String strengthString(){
         String stringStrength = "";
-        switch (strength) {
+        switch (passwordValidator(usersPassword)) {
             case 1 -> stringStrength = "very weak";
             case 2 -> stringStrength = "weak";
             case 3 -> stringStrength = "strong";
@@ -170,5 +170,3 @@ public class Password {
         System.out.printf("%nThe password '%s' is a %s password.%n", usersPassword, strengthString());
     }
 }
-
-

@@ -39,7 +39,7 @@ public class Solution25 {
         //gets password from user
         password.retrievePassword();
         //determines password strength
-        password.passwordValidator();
+        password.passwordValidator(password.usersPassword);
         //prints strength of password
         password.printStrength();
     }
