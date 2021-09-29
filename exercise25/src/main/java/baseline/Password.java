@@ -3,19 +3,24 @@ import java.util.Scanner;
 
 public class Password {
     protected String usersPassword;
+
     private int strength;
 
     //generated getters and setters for Password class
-    private void setStrength(int strength) {
+    public void setStrength(int strength) {
         this.strength = strength;
     }
-    private void setUsersPassword(String usersPassword) {
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public void setUsersPassword(String usersPassword) {
         this.usersPassword = usersPassword;
     }
     public String getUsersPassword() {
         return usersPassword;
     }
-
     public void retrievePassword() {
         //prompts user for password and stores nextLine() as a new password
         //default password strength is 0 or "unknown strength"
@@ -49,6 +54,9 @@ public class Password {
         if(isOnlyDigit(this.usersPassword)){
             setStrength(1);
         }
+        else if(hasSymbol(usersPassword)){
+            setStrength(0);
+        }
         else{
             setStrength(2);
         }
@@ -74,7 +82,7 @@ public class Password {
     }
 
     //checks the password for only digits and returns true if only digits
-    private boolean isOnlyDigit(String usersPassword) {
+    public boolean isOnlyDigit(String usersPassword) {
         int length = usersPassword.length();
         int i = 0;
         while(i < length){
@@ -89,7 +97,7 @@ public class Password {
     }
 
     //checks if string contains at least 1 letter
-    private boolean hasLetter(String usersPassword){
+    public boolean hasLetter(String usersPassword){
         int length = usersPassword.length();
         int i = 0;
         while(i < length){
@@ -107,7 +115,7 @@ public class Password {
     }
 
     //checks if string contains at least 1 number
-    private boolean hasDigit(String usersPassword){
+    public boolean hasDigit(String usersPassword){
         int length = usersPassword.length();
         int i = 0;
         while(i < length){
@@ -122,7 +130,7 @@ public class Password {
     }
 
     //checks if string contains at least 1 symbol
-    private boolean hasSymbol(String usersPassword){
+    public boolean hasSymbol(String usersPassword){
         int length = usersPassword.length();
         int i = 0;
         while(i < length){
@@ -146,7 +154,7 @@ public class Password {
     }
 
     //method that takes strength and converts it to proper string form
-    private String strengthString(){
+    public String strengthString(){
         String stringStrength = "";
         switch (passwordValidator(usersPassword)) {
             case 1 -> stringStrength = "very weak";
