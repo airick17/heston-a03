@@ -9,7 +9,7 @@ public class Solution26 {
         PaymentCalculator paymentCalculator = new PaymentCalculator();
 
         //get user input
-        paymentCalculator.getValues();
+       paymentCalculator.getValues();
         //calculate number of months to pay off balance
         paymentCalculator.calculateMonthsUntilPaidOff();
         //tell the user the number of months
