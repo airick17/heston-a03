@@ -6,8 +6,8 @@ package baseline;
 
 public class Solution30 {
     public static void main(String[] args) {
-
-        Multitable twelve = new Multitable();
-        twelve.print();
+        //makes a new table
+        Multitable table = new Multitable();
+        table.print();
     }
 }
