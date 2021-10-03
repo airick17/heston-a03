@@ -35,7 +35,7 @@ public class Game {
         do {
             Scanner scanner = new Scanner(System.in);
             try {
-                System.out.print("Enter the difficulty level (1, 2, or 3): ");
+                System.out.printf("%nEnter the difficulty level (1, 2, or 3): ");
                 tempDifficulty = scanner.nextInt();
                 keepGoing = false;
             } catch (InputMismatchException e) {
@@ -82,6 +82,7 @@ public class Game {
         //takes users guess
         //checks users guess appropriately based on difficulty
         //prints appropriate statement
+
         selectDifficulty();
         setRandomNumber(calcRandomNumber());
         System.out.print("I have my number. What's your guess? ");
@@ -92,6 +93,10 @@ public class Game {
         else{
             System.exit(0);
         }
+    }
+
+    public void printWelcome() {
+        System.out.printf("Let's play guess the Number!%n");
     }
 
     private int getValidGuess() {
@@ -114,15 +119,11 @@ public class Game {
 
     public void checkNumber(int guess) {
         //check if users guess is same as random num
-        if(getRandomNumber() == guess){
-            System.out.printf("You got it in %d guesses! Do you wish to play again? (Y/N)?%n", getGuessesCounter());
-            checkPlayAgain();
-        }
-        else if(getRandomNumber() < guess){
+        if(getRandomNumber() < guess){
                 System.out.print("Too high. Guess again: ");
                 checkNumber(getValidGuess());
             }
-            else if (getRandomNumber() > guess){
+        if (getRandomNumber() > guess){
                 System.out.print("Too low. Guess again: ");
                 checkNumber(getValidGuess());
             }
@@ -132,8 +133,9 @@ public class Game {
         //ask user if they want to play again
         //if yes call playGame();
         //else end program
-        Scanner scan = new Scanner(System.in);
-        String yesOrNo = scan.next();
+        Scanner scanner = new Scanner(System.in);
+        System.out.printf("You got it in %d guesses! Do you wish to play again? (Y/N)? ", getGuessesCounter());
+        String yesOrNo = scanner.next();
 
         if (yesOrNo.equals("n")||yesOrNo.equals("N")){
             return false;
@@ -142,7 +144,7 @@ public class Game {
             return true;
         }
         else {
-            System.out.print("Not a valid input, game now terminating");
+            System.out.printf("%nNot a valid input, game program now terminating.");
             return false;
         }
     }
