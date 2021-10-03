@@ -30,7 +30,7 @@ public class MagicBall {
         //will prompt the user for question
         //stores the users question in class variable
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What is your question? ");
+        System.out.println("What is your question?");
         setUserQuestion(scanner.nextLine());
     }
 
