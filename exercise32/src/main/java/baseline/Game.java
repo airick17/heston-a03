@@ -135,9 +135,12 @@ public class Game {
         //else end program
         Scanner scanner = new Scanner(System.in);
         System.out.printf("You got it in %d guesses! Do you wish to play again? (Y/N)? ", getGuessesCounter());
+        //reset counter in case of play again
+        setGuessesCounter(0);
         String yesOrNo = scanner.next();
 
         if (yesOrNo.equals("n")||yesOrNo.equals("N")){
+            System.out.printf("%nGame Over!%n%n");
             return false;
         }
         else if (yesOrNo.equals("y")||yesOrNo.equals("Y")){
