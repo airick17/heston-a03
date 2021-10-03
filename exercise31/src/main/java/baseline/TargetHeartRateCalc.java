@@ -75,13 +75,11 @@ class TargetHeartRateCalc {
         //prints out table of heart rate targets
         int currentIntensity = getIntensity();
         System.out.printf("%nResting Pulse: %d        Age: %d %n",getRestingPulse(), getAge());
-
-        System.out.printf("%nIntensity    | Rate");
-        System.out.printf("%n-------------|--------");
-
+        System.out.printf("%n%s %8s", "Intensity", "| Rate");
+        System.out.printf("%n------------|----------");
         for(int i = currentIntensity; i<=95; i+=5){
 
-            System.out.printf("%n%d%%          | %d bpm",currentIntensity, calculateRate());
+            System.out.printf("%n%d%%  \t\t|%4d bpm",currentIntensity, calculateRate());
             setIntensity(currentIntensity+5);
             currentIntensity += 5;
         }
