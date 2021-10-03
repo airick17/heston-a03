@@ -7,10 +7,7 @@ package baseline;
 
 public class Solution32 {
     public static void main(String[] args) {
-
         Game game = new Game();
-        game.selectDifficulty();
         game.playGame();
-
     }
 }
