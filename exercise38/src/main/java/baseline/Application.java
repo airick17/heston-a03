@@ -11,7 +11,7 @@ public class Application {
         return userStringNums;
     }
     public void setUserString(String userString) {
-        this.userString = userString;
+        this.userStringNums = userString;
     }
 
     public void userString() {
