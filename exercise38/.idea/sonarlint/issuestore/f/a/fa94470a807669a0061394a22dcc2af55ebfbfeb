@@ -1,0 +1,13 @@
+
+E
+java:S3740"/Provide the parametrized type for this generic.(±–„
+K
+java:S3740"/Provide the parametrized type for this generic.(ƒ¥à{8µîÕÊÄ/
+Q
+java:S3740%"/Provide the parametrized type for this generic.(ßòéÑÿÿÿÿÿ8ˆ„×ÊÄ/
+A
+java:S1168)"+Return an empty collection instead of null.(¥¹ï
+†
+java:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(±–„
+
+java:S1488"cImmediately return this expression instead of assigning it to the temporary variable "numberArray".(ƒ¥à{8ˆ„×ÊÄ/

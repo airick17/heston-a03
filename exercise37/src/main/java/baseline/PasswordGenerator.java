@@ -9,31 +9,24 @@ public class PasswordGenerator {
     public int getMinLength() {
         return minLength;
     }
-
     public void setMinLength(int minLength) {
         this.minLength = minLength;
     }
-
     public int getNumSpecials() {
         return numSpecials;
     }
-
     public void setNumSpecials(int numSpecials) {
         this.numSpecials = numSpecials;
     }
-
     public int getNumNums() {
         return numNums;
     }
-
     public void setNumNums(int numNums) {
         this.numNums = numNums;
     }
-
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
